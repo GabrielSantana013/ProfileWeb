@@ -159,7 +159,7 @@ span{
     font-size: 2.5rem;
     border-radius: 50%;
     color: var(--main-color);
-    margin: 3rem 1.5 rem 3 rem 0;
+    margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease-in-out;
 }
 
@@ -208,3 +208,88 @@ span{
     color: black;
     box-shadow: 0 0 25px var(--main-color);
 }
+
+ .text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+ }
+
+ .text-animation span{
+    position: relative;
+ }
+
+ .text-animation span::before{
+
+    content:"FullStack Dev";
+    color: var(--main-color);
+    animation: words 20s infinite;
+ }
+
+ .text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, text-animation 20s steps(30) infinite;
+ }
+
+ @keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+ }
+
+ @keyframes words{
+    0%,
+    20%{
+        content: "FullStack Dev";
+    }
+    21%,
+    40%{
+        content:"C/C++ Dev";
+    }
+    41%,
+    60%{
+        content:"Web Dev";
+    }
+    61%,
+    80%{
+        content:"Backend Dev";
+    }
+    81%,
+    100%{
+        content:"Developer :D";
+    }
+ }
+
+ @keyframes text-animation{
+    
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+    width: calc(100% + 8px);
+    }
+ }
